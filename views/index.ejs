@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Distance Calculator</title>
+  </head>
+  <body>
+    <h1>地址距離計算器</h1>
+    <form action="/calculate-distance" method="POST">
+      <label for="origin_name">起點地點暱稱:</label>
+      <input
+        type="text"
+        id="origin_name"
+        name="origin_name"
+        required
+        value="<%= origin_name || '' %>"
+      /><br /><br />
+
+      <label for="address1">起點地址:</label>
+      <input
+        type="text"
+        id="address1"
+        name="address1"
+        required
+        value="<%= address1 || '' %>"
+      /><br /><br />
+
+      <label for="destination_name">終點地點暱稱:</label>
+      <input
+        type="text"
+        id="destination_name"
+        name="destination_name"
+        required
+        value="<%= destination_name || '' %>"
+      /><br /><br />
+
+      <label for="address2">終點地址:</label>
+      <input
+        type="text"
+        id="address2"
+        name="address2"
+        required
+        value="<%= address2 || '' %>"
+      /><br /><br />
+
+      <button type="submit">計算距離</button>
+    </form>
+
+    <% if (distance) { %>
+    <h2>兩地址之間的距離: <%= distance %></h2>
+    <h3>開車預估時間: <%= duration %></h3>
+    <% } %> <% if (error) { %>
+    <p style="color: red"><%= error %></p>
+    <% } %>
+  </body>
+</html>
