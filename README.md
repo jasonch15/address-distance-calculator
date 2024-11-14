@@ -6,3 +6,9 @@ DB_PASSWORD=YOUR_PASSWORD
 DB_NAME=YOUR_DB_NAME
 GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
 ```
+```
+npm install
+```
+```
+node app.js
+```
